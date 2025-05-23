@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
-import ImageGallery from "./components/ImageGallery/ImageGallery";
-import Loader from "./components/Loader/Loader";
-import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
-import SearchBar from "./components/SearchBar/SearchBar";
-import { requestPhotoByQuery } from "./services/api";
-import ImageModal from "./components/ImageModal/ImageModal";
-import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
+import { useEffect, useState } from "react";
+import { requestPhotoByQuery } from "../../services/api";
+import SearchBar from "../SearchBar/SearchBar";
+import Loader from "../Loader/Loader";
+import { ErrorMessage } from "formik";
+import ImageGallery from "../ImageGallery/ImageGallery";
+import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
+import ImageModal from "../ImageModal/ImageModal";
+
 
 const App = () => {
   const [photos, setPhotos] = useState(null);
