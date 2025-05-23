@@ -39,7 +39,7 @@ const App = () => {
 
   const onSetSearchQuery = (searchTerm) => {
     setQuery(searchTerm);
-    setPage(1); // Reset page when new search query is set
+    setPage(1); 
   };
 
   const openModal = (photo) => {
