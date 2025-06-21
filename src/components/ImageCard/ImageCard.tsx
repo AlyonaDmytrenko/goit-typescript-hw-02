@@ -1,5 +1,19 @@
 import css from "./ImageCard.module.css";
-const imageCard = ({ photo }) => {
+
+interface Photo {
+  urls: {
+    small:string;
+
+  };
+  description: string;
+  id: string;
+}
+
+interface ImageCardProps{
+  photo: Photo;
+}
+
+const imageCard: React.FC<ImageCardProps> = ({ photo }) => {
   return (
     <div>
       <img

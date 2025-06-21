@@ -1,6 +1,20 @@
 import ImageCard from "../ImageCard/ImageCard/";
 
-const ImageGallery = ({ photos, openModal }) => {
+interface Photo {
+  id: string;
+  urls: {
+    small: string;
+      };
+      description: string;
+}
+
+
+interface ImageGalleryProps{
+  photos:Photo[];
+  openModal: (photo: Photo)=> void;
+}
+
+const ImageGallery: React.FC<ImageGalleryProps> = ({ photos, openModal }) => {
   return (
     <ul>
       {Array.isArray(photos) &&

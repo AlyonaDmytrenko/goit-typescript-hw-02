@@ -7,14 +7,21 @@ import ImageGallery from "../ImageGallery/ImageGallery";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "../ImageModal/ImageModal";
 
+interface Photo {
+  id: string;
+  url: string;
+  alt: string;
+ }
+
 
 const App = () => {
-  const [photos, setPhotos] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const [query, setQuery] = useState("");
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
-  const [page, setPage] = useState(1);
+  const [photos, setPhotos] = useState<Photo[] | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isError, setIsError] = useState<boolean>(false);
+  const [query, setQuery] = useState<string>("");
+  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
+  const [page, setPage] = useState<number>(1);
+
 
   useEffect(() => {
     const fetchPhotosByQuery = async () => {

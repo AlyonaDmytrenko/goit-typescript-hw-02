@@ -1,6 +1,6 @@
 import { Hourglass } from "react-loader-spinner";
 
-const Loader = () => {
+const Loader: React.FC = () => {
   return (
     <div>
       <Hourglass

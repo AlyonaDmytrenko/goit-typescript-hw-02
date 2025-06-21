@@ -1,6 +1,10 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 
+interface SearchBarProps {
+  onSetSearchQuery: (searchTerm:string)=> void;
+}
+
 const searchBarSchema = Yup.object().shape({
   searchTerm: Yup.string().required("Search term is required"),
 });
@@ -8,8 +12,8 @@ const searchBarSchema = Yup.object().shape({
 const FORM_INITIAL_VALUES = {
   searchTerm: "",
 };
-const SearchBar = ({ onSetSearchQuery }) => {
-  const handleSubmit = (values) => {
+const SearchBar: React.FC<SearchBarProps> = ({ onSetSearchQuery }) => {
+  const handleSubmit = (values: {searchTerm: string}) => {
     onSetSearchQuery(values.searchTerm);
   };
 

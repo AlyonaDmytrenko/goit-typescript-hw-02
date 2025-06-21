@@ -1,4 +1,9 @@
-const LoadMoreBtn = ({ onLoadMore, hasMore }) => {
+interface LoadMoreBtnProps {
+  onLoadMore: () => void;
+  hasMore: boolean;
+}
+
+const LoadMoreBtn: React.FC<LoadMoreBtnProps> = ({ onLoadMore, hasMore }) => {
   return (
     <>
       {hasMore && (
