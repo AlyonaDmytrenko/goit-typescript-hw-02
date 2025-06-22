@@ -1,9 +1,10 @@
 export interface Photo {
   id: string;
-  alt_description: string;
+  alt: string | undefined;
+  description: string | undefined;
   urls: {
-    small: string;
     regular: string;
+    small: string;
+    full: string;
   };
-  
 }

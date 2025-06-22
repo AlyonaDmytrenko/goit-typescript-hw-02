@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
-import { requestPhotoByQuery, Photo } from "../../services/api"; 
+import { requestPhotoByQuery } from "../../services/api";
 import SearchBar from "../SearchBar/SearchBar";
 import Loader from "../Loader/Loader";
 import ImageGallery from "../ImageGallery/ImageGallery";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "../ImageModal/ImageModal";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
-
-
+import { Photo } from "./App.types";
 
 const App = () => {
-  const [photos, setPhotos] = useState<Photo[] | null>(null);
+  const [photos, setPhotos] = useState<Photo[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
   const [query, setQuery] = useState<string>("");
@@ -41,7 +40,7 @@ const App = () => {
 
   const onSetSearchQuery = (searchTerm: string) => {
     setQuery(searchTerm);
-    setPage(1); 
+    setPage(1);
   };
 
   const openModal = (photo: Photo) => {
