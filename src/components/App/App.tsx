@@ -22,7 +22,7 @@ const App = () => {
 
       setIsLoading(true);
       try {
-        const data = await requestPhotoByQuery(query, page);
+        const data = await requestPhotoByQuery(query);
         setPhotos((prevPhotos) => {
           if (page === 1) return data.results;
           return [...prevPhotos, ...data.results];
