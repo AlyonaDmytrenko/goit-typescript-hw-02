@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { requestPhotoByQuery, Photo } from "../../services/api"; 
 import SearchBar from "../SearchBar/SearchBar";
 import Loader from "../Loader/Loader";
-import { ErrorMessage } from "../ErrorMessage/ErrorMessage";
 import ImageGallery from "../ImageGallery/ImageGallery";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "../ImageModal/ImageModal";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
+
 
 const App = () => {
   const [photos, setPhotos] = useState<Photo[] | null>(null);
