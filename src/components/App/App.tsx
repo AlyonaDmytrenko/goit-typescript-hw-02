@@ -8,6 +8,7 @@ import ImageModal from "../ImageModal/ImageModal";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 
+
 const App = () => {
   const [photos, setPhotos] = useState<Photo[] | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
